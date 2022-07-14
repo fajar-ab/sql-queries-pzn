@@ -1,1 +1,1 @@
-# sql-queries-pzn
+# SQL Queries | Programing Zaman Naw

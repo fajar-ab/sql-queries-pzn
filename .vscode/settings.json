@@ -8,7 +8,7 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MariaDB",
-            "name": "belajar-query-sql",
+            "name": "tutorial_mysql_pzn",
             "database": "belajar_mysql",
             "username": "root",
             "password": ""

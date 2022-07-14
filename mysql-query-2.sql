@@ -45,10 +45,10 @@ VALUES ('fajarfadilah@gmail.com', 'fajar', 'fadilah'),
 SELECT *
 FROM customers;
 
+-- @block query
 -- ! ERROR karna email harus unique tidak boleh duplicat
 -- INSERT INTO customers(email, first_name, last_name)
 -- VALUES ('fajarfadilah@gmail.com', 'fajar', 'fadilah');
-
 
 
 -- * CHECK CONSTRAINT
@@ -62,16 +62,16 @@ FROM customers;
 --     price INT UNSIGNED NOT NULL,
 --     quantity INT UNSIGNED NOT NULL DEFAULT 0,
 --     create_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP PRIMARY KEY (id),
---     CONSTRAINT price_check CHECK (price = > 1000)
+--     CONSTRAINT price_check CHECK (price >= 1000)
 -- ) ENGINE = InnoDB;
 
 -- * Menambahkan Atau Menghapus CHECK CONSTRAINT
 
--- @blck menambah check constraint
+-- @block menambah check constraint
 ALTER TABLE products
 ADD CONSTRAINT price_check CHECK (price >= 1000);
 
--- @blck menghapus check constraint
+-- @block menghapus check constraint
 ALTER TABLE products DROP CONSTRAINT price_check;
 
 -- @block query
@@ -80,12 +80,12 @@ FROM products;
 
 
 -- ! ERROR karnam price harus lebih aatau sama dengan 1000 karna price itu constrint check
--- -- @block query
+--- @block query
 -- INSERT INTO products(id, name, category, price, quantity) 
 -- VALUES ('P0017', 'Permen', 'Lain-Lain', 500, 1000);
 
 -- ! saat update data saat price dibawah 1000 juga akan di tolak
--- -- @block query
+-- @block query
 -- UPDATE products
 -- SET price = 500
 -- WHERE id = 'P0013';
@@ -113,7 +113,7 @@ CREATE TABLE sellers (
     UNIQUE KEY email_unique (email),
     -- untuk unique juga sama akan menambahkan index
     INDEX name_index (name) -- ini akan menambahkan index pada kolom name
-) ENGINE = InnoDB;
+) ENGINE = InnoDB
 
 
 -- * Menambahkan Atau Menghapus INDEX
@@ -183,3 +183,6 @@ WHERE MATCH(name, description) AGAINST('+ayam -bakso' IN BOOLEAN MODE);
 SELECT *
 FROM products
 WHERE MATCH(name, description) AGAINST('bakso' WITH QUERY EXPANSION);
+
+-- @block query
+select name, category, price FROM products;
