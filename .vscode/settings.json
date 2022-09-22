@@ -9,9 +9,11 @@
             "port": 3306,
             "driver": "MariaDB",
             "name": "tutorial_mysql_pzn",
-            "database": "belajar_mysql",
+            "database": "tutorial_mysql_pzn",
             "username": "root",
             "password": ""
         }
-    ]
+    ],
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.editor.pinnedTabSizing": "compact"
 }

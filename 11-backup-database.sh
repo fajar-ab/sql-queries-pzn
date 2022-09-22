@@ -1,0 +1,1 @@
+mysqldump tutorial_mysql_pzn --user root --password --result-file="D:\Programing\MYSQL\+Study\sql-query-pzn\backup.sql
